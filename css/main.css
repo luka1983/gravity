@@ -1,0 +1,12 @@
+body {
+	background-color: black;
+}
+
+#text-node-counter {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	font-weight: bold;
+	color: white;
+	font-size: xx-large;
+}
