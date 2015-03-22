@@ -22,6 +22,14 @@ function (object) {
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		ctx.clearRect ( 0 , 0 , canvas.width, canvas.height );
+
+		// draw overlay
+		ctx.font="bold 20px Courier New";
+		ctx.fillStyle = "#74d050";
+		ctx.fillText('x: ' + Math.round(this.objects[0].position.x) + '', 10, 15);
+		ctx.fillText('y: ' + Math.round(this.objects[0].position.y) + '', 10, 30);
+
+		// draw game objects
 		for (var i in this.objects)
 			this.objects[i].draw(ctx);
 
