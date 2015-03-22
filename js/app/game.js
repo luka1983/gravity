@@ -53,17 +53,22 @@ function (world) {
 				this.world.objects[i].print_name();
 			this.initialize_controls(this);
 
-			if (this.canvas == undefined) {
-				this.canvas = $('<canvas></canvas>').width($(window).width()).height($(window).height);
+			if (document.getElementById('canvas') == undefined || document.getElementById('canvas') == null) {
+				this.canvas = $('<canvas></canvas>');
+				this.canvas.attr('id', 'canvas');
+				this.canvas.attr('width', window.innerWidth + '');
+				this.canvas.attr('height', window.innerHeight + '');
 				$('body').append(this.canvas);
 			}
 
-			this.ctx = this.canvas[0].getContext('2d');
-			this.ctx.clearRect ( 0 , 0 , this.canvas.width, this.canvas.height );
+			var canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+			ctx.clearRect ( 0 , 0 , canvas.width, canvas.height );
 
 			hloaded();
 		},
 		start: function () {
+			this.state = 'running';
 			setInterval(this.step, this.tick, this);
 		},
 		step: function (that) {

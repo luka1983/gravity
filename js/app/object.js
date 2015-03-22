@@ -80,12 +80,8 @@ function () {
 				ctx.closePath()
 			}
 
-
 			ctx.stroke();
 			ctx.restore();
-
-
-
 		}
 	}
 });
