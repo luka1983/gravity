@@ -1,13 +1,14 @@
 requirejs.config({
 	baseUrl: 'js/lib',
 	paths: {
-		app: '../app'
+		app: '../app',
+		jquery: 'jquery'
 	}
 });
 
 // Start the main app logic.
-requirejs(['app/game'],
-function (game) {
+requirejs(['jquery', 'app/game'],
+function ($, game) {
 	var load_handler = function() {
 		console.log('loaded handler called');
 		game.start();

@@ -1,5 +1,5 @@
-define(['./object'], 
-function (object) {
+define(['jquery', './object'], 
+function ($, object) {
 	function populate(num) {
 		var objects = [];
 		for (var i = 0; i < num; ++i) {

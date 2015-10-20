@@ -1,5 +1,5 @@
 define(['jquery', './world'], 
-function (jquery, world) {
+function ($, world) {
 	return {
 		state: 'initial',
 		world: world,
